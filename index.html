@@ -7,17 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cash Register App</title>
   </head>
+
   <body>
-    <div class="cash">
+    <header>
+      <h1>Cash Manager Application</h1>
+    </header>
+    <section class="cash">
       <div class="cash__title">
-        <h1>cash register</h1>
+        <h1>Fill all Details</h1>
       </div>
       <div class="cash__processing">
         <input type="number" id="bill" placeholder="bill" />
         <input type="number" id="paid" placeholder="paid" />
         <button type="button" id="btn">calculate</button>
       </div>
-    </div>
+    </section>
+    <section>
+      <div class="output">
+        <table>
+          <tr>
+            <th>2000</th>
+            <th>500</th>
+            <th>100</th>
+            <th>20</th>
+            <th>10</th>
+            <th>5</th>
+            <th>1</th>
+          </tr>
+          <tr id="display_count"></tr>
+        </table>
+      </div>
+    </section>
   </body>
 
   <script src="app.js"></script>
