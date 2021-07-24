@@ -5,6 +5,15 @@ const paybackCashAmount = [];
 const bill = document.getElementById("bill");
 const paid = document.getElementById("paid");
 
+const createTable = (returnAmount) => {
+  returnAmount.map((cash) => {
+    let trElement = document.getElementById("display_count");
+    let td = document.createElement("td");
+    trElement.appendChild(td);
+    td.innerHTML = cash.currencyReturn;
+  });
+};
+
 const CashReturn = (amountLeft) => {
   const cashAvailable = [2000, 500, 100, 20, 10, 5, 1];
 
@@ -15,18 +24,16 @@ const CashReturn = (amountLeft) => {
     countCash = 0;
     while (amountToreturn >= cashValue) {
       amountToreturn = amountToreturn - cashValue;
-      countCash = countCash + 1;
+      countCash += 1;
     }
     const returnCash = {
-      id: cashValue,
-      amountRetrun: countCash,
+      currency: cashValue,
+      currencyReturn: countCash,
     };
     paybackCashAmount.push(returnCash);
   });
 
-  paybackCashAmount.map((cash) => {
-    console.log(cash.amountRetrun);
-  });
+  createTable(paybackCashAmount);
 };
 
 const CalculateBill = (billA, paidA) => {
