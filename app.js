@@ -5,11 +5,12 @@ const paybackCashAmount = [];
 const bill = document.getElementById("bill");
 const paid = document.getElementById("paid");
 
-const createTable = (returnAmount) => {
-  returnAmount.map((cash) => {
+const createTable = (paybackStats) => {
+  paybackStats.map((cash) => {
     let tdElement = document.getElementById(cash.currency);
     tdElement.innerHTML = cash.currencyReturn;
   });
+  document.getElementById("show").style.display = "block";
 };
 
 const CashReturn = (amountLeft) => {
@@ -30,7 +31,8 @@ const CashReturn = (amountLeft) => {
     };
     paybackCashAmount.push(returnCash);
   });
-
+  document.getElementById("amount").innerHTML = `Rs ${amountLeft}/-`;
+  document.getElementById("payback").style.display = "grid";
   createTable(paybackCashAmount);
 };
 
