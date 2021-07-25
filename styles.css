@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif !important;
 }
 
 html ::-webkit-scrollbar {
@@ -11,31 +12,41 @@ html ::-webkit-scrollbar {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: sans-serif !important;
   display: grid;
-  grid-template-rows: 200px 100vh;
+  margin: 0.2rem;
 }
 
 header {
-  height: 100%;
+  height: 300px;
   background-color: #3bb78f;
   background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+  clip-path: polygon(0 0, 100% 0, 100% 57%, 0 88%);
 }
 
 .title {
-  padding: 2rem 0 0 1rem;
+  width: 80%;
+
+  margin: 0 auto;
+  padding: 2rem 0 0 0;
   font-size: 1rem;
   color: #ffff;
 }
+#title {
+  width: 50%;
+}
 
 .title__logo {
-  width: 80%;
-
+  width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
 img {
   width: 30%;
+}
+.computation {
+  height: auto;
 }
 .cash {
   width: 90%;
@@ -46,7 +57,7 @@ img {
   margin-right: auto;
   left: 0;
   right: 0;
-  top: 9rem;
+  top: 7rem;
   border-radius: 0.3rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 1rem;
@@ -86,9 +97,66 @@ button {
   border-radius: 2rem;
 }
 
+.payback {
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 6rem;
+  border-radius: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #3bb78f;
+  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  display: none;
+}
+.payback__titile {
+  text-align: center;
+  color: #ffff;
+  padding: 0.5rem;
+  border-bottom: 2px solid #3333;
+}
+.payback__amount {
+  text-align: center;
+  color: #000;
+  padding-top: 2rem;
+  background-image: url("images/banner.svg");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  z-index: 0;
+
+  opacity: 0.4;
+}
+
+.payback__amountNumber {
+  width: 80%;
+  height: 50px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: 5.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+
 .show {
   width: 100%;
-  padding-top: 14rem;
+  padding-top: 3rem;
+  display: none;
+}
+
+.show__title {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0.5rem;
+  color: #37b24d;
 }
 
 .show__table {
@@ -97,6 +165,8 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: #fff;
+  border: 2px solid #38d9a9;
+  padding: 1rem;
 }
 
 .show__currency {
@@ -106,10 +176,12 @@ button {
   grid-template-rows: repeat(8, 50px);
   text-align: left;
 }
+
 .show__data {
   font-size: 1rem;
   font-weight: 600;
 }
+
 .show__return {
   display: grid;
   grid-template-rows: repeat(8, 50px);
