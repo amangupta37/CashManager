@@ -5,37 +5,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cash Register App</title>
+    <title>Cashify</title>
   </head>
 
   <body>
     <header>
-      <h1>Cash Manager Application</h1>
+      <div class="title">
+        <div class="title__logo">
+          <h1>Cash Manager</h1>
+          <img src="images/logo.svg" alt="logo" />
+        </div>
+      </div>
     </header>
     <section class="cash">
       <div class="cash__title">
-        <h1>Fill all Details</h1>
+        <p>Enter Details</p>
       </div>
       <div class="cash__processing">
-        <input type="number" id="bill" placeholder="bill" />
-        <input type="number" id="paid" placeholder="paid" />
+        <input type="number" id="bill" placeholder="bill amount" required />
+        <input type="number" id="paid" placeholder="paid amount" required />
         <button type="button" id="btn">calculate</button>
       </div>
     </section>
-    <section>
-      <div class="output">
-        <table>
-          <tr>
-            <th>2000</th>
-            <th>500</th>
-            <th>100</th>
-            <th>20</th>
-            <th>10</th>
-            <th>5</th>
-            <th>1</th>
-          </tr>
-          <tr id="display_count"></tr>
-        </table>
+    <section class="show">
+      <div class="show__table">
+        <div class="show__currency">
+          <div class="show__data">Currency</div>
+          <div class="show__data">2000</div>
+          <div class="show__data">500</div>
+          <div class="show__data">100</div>
+          <div class="show__data">20</div>
+          <div class="show__data">10</div>
+          <div class="show__data">5</div>
+          <div class="show__data">1</div>
+        </div>
+        <div class="show__return">
+          <div class="show__return__currency" id="2000">Return Amount</div>
+          <div class="show__return__currency" id="2000">0</div>
+          <div class="show__return__currency" id="500">0</div>
+          <div class="show__return__currency" id="100">0</div>
+          <div class="show__return__currency" id="20">0</div>
+          <div class="show__return__currency" id="10">0</div>
+          <div class="show__return__currency" id="5">0</div>
+          <div class="show__return__currency" id="1">0</div>
+        </div>
       </div>
     </section>
   </body>
