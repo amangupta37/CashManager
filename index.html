@@ -12,45 +12,56 @@
     <header>
       <div class="title">
         <div class="title__logo">
-          <h1>Cash Manager</h1>
+          <h1 id="title">Cash Manager</h1>
           <img src="images/logo.svg" alt="logo" />
         </div>
       </div>
     </header>
-    <section class="cash">
-      <div class="cash__title">
-        <p>Enter Details</p>
-      </div>
-      <div class="cash__processing">
-        <input type="number" id="bill" placeholder="bill amount" required />
-        <input type="number" id="paid" placeholder="paid amount" required />
-        <button type="button" id="btn">calculate</button>
-      </div>
-    </section>
-    <section class="show">
-      <div class="show__table">
-        <div class="show__currency">
-          <div class="show__data">Currency</div>
-          <div class="show__data">2000</div>
-          <div class="show__data">500</div>
-          <div class="show__data">100</div>
-          <div class="show__data">20</div>
-          <div class="show__data">10</div>
-          <div class="show__data">5</div>
-          <div class="show__data">1</div>
+
+    <div class="computation">
+      <section class="cash">
+        <div class="cash__title">
+          <p>Enter Details</p>
         </div>
-        <div class="show__return">
-          <div class="show__return__currency" id="2000">Return Amount</div>
-          <div class="show__return__currency" id="2000">0</div>
-          <div class="show__return__currency" id="500">0</div>
-          <div class="show__return__currency" id="100">0</div>
-          <div class="show__return__currency" id="20">0</div>
-          <div class="show__return__currency" id="10">0</div>
-          <div class="show__return__currency" id="5">0</div>
-          <div class="show__return__currency" id="1">0</div>
+        <div class="cash__processing">
+          <input type="number" id="bill" placeholder="bill amount" required />
+          <input type="number" id="paid" placeholder="paid amount" required />
+          <button type="button" id="btn">calculate</button>
         </div>
-      </div>
-    </section>
+      </section>
+      <section class="payback">
+        <div class="payback__titile"><h1>Total Payback Amount</h1></div>
+        <div class="payback__amount"></div>
+        <div class="payback__amountNumber"><h1 id="amount">Rs 5000/-</h1></div>
+      </section>
+      <section class="show">
+        <div class="show__title">
+          <h1>Payback Details</h1>
+        </div>
+        <div class="show__table">
+          <div class="show__currency">
+            <div class="show__data">Notes</div>
+            <div class="show__data">Rs 2000</div>
+            <div class="show__data">Rs 500</div>
+            <div class="show__data">Rs 100</div>
+            <div class="show__data">Rs 20</div>
+            <div class="show__data">Rs 10</div>
+            <div class="show__data">Rs 5</div>
+            <div class="show__data">Rs 1</div>
+          </div>
+          <div class="show__return">
+            <div class="show__return__currency">No of Notes to Return</div>
+            <div class="show__return__currency" id="2000">0</div>
+            <div class="show__return__currency" id="500">0</div>
+            <div class="show__return__currency" id="100">0</div>
+            <div class="show__return__currency" id="20">0</div>
+            <div class="show__return__currency" id="10">0</div>
+            <div class="show__return__currency" id="5">0</div>
+            <div class="show__return__currency" id="1">0</div>
+          </div>
+        </div>
+      </section>
+    </div>
   </body>
 
   <script src="app.js"></script>
