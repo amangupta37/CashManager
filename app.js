@@ -7,10 +7,8 @@ const paid = document.getElementById("paid");
 
 const createTable = (returnAmount) => {
   returnAmount.map((cash) => {
-    let trElement = document.getElementById("display_count");
-    let td = document.createElement("td");
-    trElement.appendChild(td);
-    td.innerHTML = cash.currencyReturn;
+    let tdElement = document.getElementById(cash.currency);
+    tdElement.innerHTML = cash.currencyReturn;
   });
 };
 
@@ -61,5 +59,8 @@ paid.addEventListener("input", (e) => {
 const submit = document.getElementById("btn");
 
 submit.addEventListener("click", () => {
+  if (billAmount === 0 || paidAmount === 0) {
+    return alert("enter amount");
+  }
   CalculateBill(billAmount, paidAmount);
 });
