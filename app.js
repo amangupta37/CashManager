@@ -41,7 +41,7 @@ const CalculateBill = (billA, paidA) => {
   customerPaid = parseInt(paidA);
 
   if (customerBill > customerPaid) {
-    return alert("bill is more than paid");
+    return alert("Bill is More Than Paid Amount");
   }
   ReturnAmount = customerPaid - customerBill;
 
@@ -61,8 +61,13 @@ paid.addEventListener("input", (e) => {
 const submit = document.getElementById("btn");
 
 submit.addEventListener("click", () => {
-  if (billAmount === 0 || paidAmount === 0) {
-    return alert("enter amount");
+  if (
+    billAmount === 0 ||
+    billAmount <= 0 ||
+    paidAmount === 0 ||
+    paidAmount <= 0
+  ) {
+    return alert("Enter Valid Amount !!!");
   }
   CalculateBill(billAmount, paidAmount);
 });
