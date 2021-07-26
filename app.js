@@ -61,12 +61,7 @@ paid.addEventListener("input", (e) => {
 const submit = document.getElementById("btn");
 
 submit.addEventListener("click", () => {
-  if (
-    billAmount === 0 ||
-    billAmount <= 0 ||
-    paidAmount === 0 ||
-    paidAmount <= 0
-  ) {
+  if (billAmount <= 0 || paidAmount <= 0) {
     return alert("Enter Valid Amount !!!");
   }
   CalculateBill(billAmount, paidAmount);
