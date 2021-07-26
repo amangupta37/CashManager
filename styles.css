@@ -26,7 +26,6 @@ header {
 
 .title {
   width: 80%;
-
   margin: 0 auto;
   padding: 2rem 0 0 0;
   font-size: 1rem;
@@ -177,7 +176,7 @@ button {
   text-align: left;
 }
 
-.show__data {
+.show--table {
   font-size: 1rem;
   font-weight: 600;
 }
@@ -189,4 +188,82 @@ button {
 }
 .show__return__currency {
   color: #d6336c;
+}
+
+@media only screen and (min-width: 1000px) {
+  body {
+    margin: 1.2rem;
+  }
+  header {
+    height: 500px;
+  }
+  #title {
+    width: 80%;
+    font-size: 3rem;
+    padding-top: 4rem;
+  }
+  .cash {
+    width: 30%;
+    height: 350px;
+    top: 15rem;
+    grid-template-rows: 50px 1fr;
+  }
+
+  .cash__title {
+    font-size: 2rem;
+  }
+
+  .cash__processing {
+    grid-template-rows: repeat(2, 60px) 65px;
+    grid-row-gap: 2rem;
+  }
+
+  input {
+    font-size: 1.2rem;
+  }
+  button {
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .payback {
+    width: 70%;
+    height: 300px;
+  }
+
+  .payback__amount {
+    background-size: 25%;
+  }
+
+  .payback__amountNumber {
+    width: 20%;
+    height: 5rem;
+    padding: 1rem;
+    margin-top: 8rem;
+    border: 3px solid #3333;
+  }
+  .show__title {
+    font-size: 1.5rem;
+  }
+  .show__table {
+    width: 80%;
+  }
+
+  .show__currency {
+    width: 50%;
+    padding: 3rem;
+  }
+  .style--me {
+    width: 300px;
+    padding: 0.2rem;
+  }
+  .show__return {
+    width: 70%;
+    padding: 3rem;
+  }
+
+  .show--table {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
 }
