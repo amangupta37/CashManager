@@ -9,22 +9,22 @@ const createTable = (paybackStats) => {
   paybackStats.map((cash) => {
     let tdElement = document.getElementById(cash.currency);
     tdElement.innerHTML = cash.currencyReturn;
+
+    if (cash.currencyReturn > 0) {
+      tdElement.style.color = "#37b24d";
+    }
   });
   document.getElementById("show").style.display = "block";
 };
 
 const CashReturn = (amountLeft) => {
   const cashAvailable = [2000, 500, 100, 20, 10, 5, 1];
-
   let amountToreturn = amountLeft;
   let countCash;
 
   cashAvailable.forEach((cashValue) => {
-    countCash = 0;
-    while (amountToreturn >= cashValue) {
-      amountToreturn = amountToreturn - cashValue;
-      countCash += 1;
-    }
+    countCash = Math.floor(amountToreturn / cashValue);
+    amountToreturn = amountToreturn % cashValue;
     const returnCash = {
       currency: cashValue,
       currencyReturn: countCash,
@@ -32,7 +32,9 @@ const CashReturn = (amountLeft) => {
     paybackCashAmount.push(returnCash);
   });
   document.getElementById("amount").innerHTML = `Rs ${amountLeft}/-`;
-  document.getElementById("payback").style.display = "grid";
+  const showAmount = document.getElementById("payback");
+  showAmount.style.display = "grid";
+  showAmount.scrollIntoView();
   createTable(paybackCashAmount);
 };
 
@@ -44,7 +46,6 @@ const CalculateBill = (billA, paidA) => {
     return alert("Bill is More Than Paid Amount");
   }
   ReturnAmount = customerPaid - customerBill;
-
   CashReturn(ReturnAmount);
 };
 
